@@ -20,3 +20,6 @@ Route::get('/user/{name}', function ($name) {
 Route::get('/บวกเลข/{num1}-{num2}' , function ($num1,$num2){
     return $num1+$num2;
 });
+Route::get('/showdetail/{name2}/{age}/{say}' , function ($name2,$age,$say){
+    return "สวัสดี $name2 คุณมีอายุ $age ปี และคุณพูดว่า '$say'";
+});
