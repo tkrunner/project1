@@ -11,15 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/user/{name}', function ($name) {
-    return "สวัสดี $name";
-});
-Route::get('/บวกเลข/{num1}-{num2}' , function ($num1,$num2){
-    return $num1+$num2;
-});
-Route::get('/showdetail/{name2}/{age}/{say}' , function ($name2,$age,$say){
-    return "สวัสดี, $name2 คุณมีอายุ $age ปี และคุณพูดว่า '$say'";
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/user/{name}', function ($name) {
+//     return "สวัสดี $name";
+// });
+// Route::get('/บวกเลข/{num1}-{num2}' , function ($num1,$num2){
+//     return $num1+$num2;
+// });
+// Route::get('/showdetail/{name2}/{age}/{say}' , function ($name2,$age,$say){
+//     return "สวัสดี, $name2 คุณมีอายุ $age ปี และคุณพูดว่า '$say'";
+// });
+
+Route::get('/', 'HomeController@index');
+Route::get('/greeting', 'HomeController@greeting');
+Route::get('/บวกเลข/{num1}/{num2}/{num3}', 'HomeController@calculator');
+Route::get('/user', 'UserController@index');
+Route::get('/user/show/{id}', 'UserController@show');
+Route::get('/user/update/{id}', 'UserController@update');
