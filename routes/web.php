@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/user/{name}', function ($name) {
+    return "สวัสดี $name";
+});
+Route::get('/บวกเลข/{num1}-{num2}' , function ($num1,$num2){
+    return $num1+$num2;
+});
